@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Spaces:Texas A&M University</title>
+  <link rel="stylesheet" href="Green Spaces CSS.css">
+  
+  <style>
+     .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 220vh;
+      flex-direction: column;
+    }
+    
+    body {
+            padding: 25px;
+            background-color: rgb(236, 255, 236);
+            color: darkgreen;
+            font-size: 16px;
+            font-family:'monospace';
+        }
+ 
+        .dark-mode {
+            background-color: #081c15;
+            color: #d8f3dc;
+            border-color: #d8f3dc;
+        
+        }
+
+        .dark-mode-container {
+      position: absolute;
+      top: 10px;
+      right: 10px; 
+        }
+
+        .dark-mode #datetime {
+      color: #d8f3dc; 
+    }
+
+    p.big {
+  line-height: 1.5;
+}
+iframe {
+      margin-bottom: 20px;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 700px; 
+      height: 630px;
+    }
+
+    .iframe-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #081c1568; 
+      padding: 5px;
+      color:#d8f3dc ;
+      font-size: 14px;
+      text-align: center;
+    }
+
+  
+  </style>
+
+</head>
+<body>
+
+  <p id="datetime"></p>
+<h1> Green Spaces: Texas A&M Campus</h1>
+<h3>By: Emilia Flores, Arantza Cabrera, Juan Guerra, Amanda Oates, Sarah Drvol, Cade Trahan</h3>
+
+
+<nav class="navbar">
+  <ul>
+      <li><a href="Green Spaces.html">Home</a></li>
+      <li><a href="maps.html">Map</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      
+  </ul>
+</nav>
+
+<main>
+<hr class="solid"></hr>
+<h2> Maps</h2>
+<hr class="solid"></hr>
+</main>
+
+  <label for="font-selector">Select Font</label>
+  <select id="font-selector" onchange="document.body.style.fontFamily = this.value;">
+    <option value="monospace">Monospace</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Tahoma">Tahoma</option>
+  </select>
+
+  <script>
+    var now = new Date();
+    var datetime = now.toLocaleString();
+    document.getElementById("datetime").innerHTML = datetime;
+  </script>
+
+<script>
+    function updateTime() {
+        var now = new Date();
+        var datetime = now.toLocaleString();
+        document.getElementById("datetime").innerHTML = datetime;
+      }
+    
+      updateTime();
+    
+      setInterval(updateTime, 1000);
+      </script>
+
+<div class="dark-mode-container">
+  <button onclick="darkMode()">Dark Mode</button>
+</div>
+
+
+<script>
+  function darkMode() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+  }
+</script>
+
+<div class="center">
+  <div class="iframe-container">
+    <iframe src="https://tamu.maps.arcgis.com/apps/instant/basic/index.html?appid=c00f78af25b945d79941d20b975f42e3" frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen>iFrames are not supported on this page.</iframe>
+    <div class="iframe-caption">Texas A&M Green Spaces and Greenery</div>
+  </div>
+  
+  <div class="iframe-container">
+    <iframe src="https://tamu.maps.arcgis.com/apps/instant/basic/index.html?appid=cd1a507dc45e42cf962a84b8c6a8624d" frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen>iFrames are not supported on this page.</iframe>
+    <div class="iframe-caption">Texas A&M Tree Inventory</div>
+  </div>
+  
+  <div class="iframe-container">
+    <iframe src="https://www.arcgis.com/apps/dashboards/905e3d677eb7475a9cf229c9f703c709" frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen>iFrames are not supported on this page.</iframe>
+    <div class="iframe-caption">Texas A&M Green Spaces & Heat/Density Dashboard</div>
+  </div>
+</div>
+
+  
+</script>
+ 
+ 
+</body>
+</html>
